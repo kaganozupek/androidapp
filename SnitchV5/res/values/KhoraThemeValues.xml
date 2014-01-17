@@ -4,6 +4,7 @@
     <color name="khora_action_bar_color">#467FD7</color>
     <color name="khora_action_bar_text_color">#FFFFFF</color>
     <color name="khora_action_bar_next_button_background">#AAAAAA</color>
+    <color name="khora_facebook_login">#1E4072</color>
     
     
 </resources>

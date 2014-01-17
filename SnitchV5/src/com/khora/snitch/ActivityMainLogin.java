@@ -1,11 +1,20 @@
 package com.khora.snitch;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 import android.opengl.Visibility;
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
+import android.content.pm.Signature;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Base64;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
@@ -27,12 +36,8 @@ public class ActivityMainLogin extends ActionBarActivity {
 		mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
 		Button ActionBarDrawerButton = (Button) findViewById(R.id.btnOpenDrawer);
 		ActionBarDrawerButton.setVisibility(Button.GONE);
-		System.out.println("");
-		
-													
 
 	}
-
 	public void openDrawer() {
 
 		mDrawerLayout.openDrawer(drawerLayout);

@@ -13,7 +13,7 @@
         android:src="@drawable/background_login_page" />
 
     <LinearLayout
-         android:id="@+id/layout_facebook_button"
+        android:id="@+id/layout_facebook_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/layout_email_button"
@@ -28,22 +28,23 @@
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_gravity="center_vertical"
+            android:layout_weight="5"
             android:background="#333333"
             android:drawableLeft="@drawable/icon_facebook"
-            android:paddingLeft="4dp"
-            android:layout_weight="5" />
+            android:paddingLeft="4dp" />
 
-        <Button
-            android:id="@+id/button2"
+        <com.facebook.widget.LoginButton
+            xmlns:fb="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/authButton"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
             android:background="#1E4072"
-            android:text="Facebook ile giriş yap"
             android:textColor="@color/White"
-            android:textSize="20dp" />
-
+            android:textSize="20dp"
+            fb:login_text="Facebook ile giriş yap"
+            fb:logout_text="ÇIKIŞ" />
     </LinearLayout>
 
     <LinearLayout
@@ -75,18 +76,15 @@
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
             android:background="#E2E2E2"
-            
             android:text="E-posta ile kaydol"
             android:textColor="#666666"
             android:textSize="20dp" />
-
     </LinearLayout>
 
     <LinearLayout
-       	android:id="@+id/layout_text"
+        android:id="@+id/layout_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="51dp" >
@@ -99,14 +97,13 @@
 
         <TextView
             android:id="@+id/tvLoginMail"
-            android:layout_marginLeft="10dp"
-            android:textColor="@color/khora_action_bar_color"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Şimdi Giriş Yap"
+            android:textColor="@color/khora_action_bar_color"
             android:textSize="16dp"
-            android:textStyle="bold"
-            android:text="Şimdi Giriş Yap" />
-
+            android:textStyle="bold" />
     </LinearLayout>
 
 </RelativeLayout>
