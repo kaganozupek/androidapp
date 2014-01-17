@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/khora_action_bar_color" >
+
+    <TextView
+        android:id="@+id/tvActionbarTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="6dp"
+        android:gravity="center"
+        android:text="Snitch"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:textSize="@dimen/khora_actionbar_title_text_size" />
+
+    <Button
+        android:id="@+id/btnOpenDrawer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:onClick="DrawerOpenClickEvent"
+        android:text=""
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/btnNextForSubmitEmailFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_alignBaseline="@+id/tvActionbarTitle"
+        
+        android:layout_alignParentRight="true"
+        android:background="@drawable/button_round_gray"
+        android:onClick="btnNextPressedForSubmitEmailFragment"
+        android:text="Ileri"
+        android:textColor="@color/White"
+        android:visibility="gone" />
+    <Button
+        android:id="@+id/btnPrevForSubmitEmailFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_alignBaseline="@+id/tvActionbarTitle"
+        
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/button_round_gray"
+        android:onClick="btnPrevPressedForSubmitEmailFragment"
+        android:text="Geri"
+        android:textColor="@color/White"
+        android:visibility="gone" />
+     <Button
+        android:id="@+id/btnFinishForSubmitEmailNextFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_alignBaseline="@+id/tvActionbarTitle"
+        
+        android:layout_alignParentRight="true"
+        android:background="@drawable/button_round_gray"
+        android:onClick="btnFinishPressedForSubmitEmailFragment"
+        android:text="Bitti"
+        android:textColor="@color/White"
+        android:visibility="gone" />
+
+   
+
+</RelativeLayout>
