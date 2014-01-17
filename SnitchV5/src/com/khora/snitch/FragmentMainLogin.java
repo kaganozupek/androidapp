@@ -25,21 +25,13 @@ import android.widget.TextView;
 
 public class FragmentMainLogin extends Fragment implements View.OnClickListener {
 
-	private UiLifecycleHelper uiHelper;
+	
 
-	private Session.StatusCallback callback = new Session.StatusCallback() {
-		@Override
-		public void call(Session session, SessionState state,
-				Exception exception) {
-			onSessionStateChange(session, state, exception);
-		}
-	};
+	
 
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		uiHelper = new UiLifecycleHelper(getActivity(), callback);
-		uiHelper.onCreate(savedInstanceState);
-
+	
 	};
 
 	@Override
@@ -52,10 +44,7 @@ public class FragmentMainLogin extends Fragment implements View.OnClickListener 
 		// VIew implementations
 		Button btnSubmitMail = (Button) v.findViewById(R.id.btnSubmitEmail);
 		TextView tvLoginMail = (TextView) v.findViewById(R.id.tvLoginMail);
-		LoginButton authButton = (LoginButton) v.findViewById(R.id.authButton);
-		authButton.setBackgroundResource(R.drawable.button_facebook_login);
-		authButton.setReadPermissions(Arrays.asList("email", "user_status"));
-		authButton.setFragment(this);
+		
 
 		// View setClick listeners
 
@@ -86,84 +75,4 @@ public class FragmentMainLogin extends Fragment implements View.OnClickListener 
 
 	}
 
-	private void onSessionStateChange(Session session, SessionState state,
-			Exception exception) {
-		List<String> permissions = new ArrayList<String>();
-		permissions.add("email");
-		Session.openActiveSession(getActivity(), true, new StatusCallback() {
-
-			@Override
-			public void call(Session session, SessionState state,
-					Exception exception) {
-				// TODO Auto-generated method stub
-				if (session.isOpened()) {
-					Request.newMeRequest(session,
-							new Request.GraphUserCallback() {
-
-								
-								@Override
-								public void onCompleted(GraphUser user,
-										Response response) {
-									if (user != null) {
-										
-										
-										
-										String firstName = user.getFirstName();
-										String lastName = user.getLastName();
-										String id = user.getId();
-										String email = user
-												.getProperty("email")
-												.toString();
-
-										Log.e("facebookid", id);
-										Log.e("firstName", firstName);
-										Log.e("lastName", lastName);
-										Log.e("email", email);
-
-									}
-								}
-							}).executeAsync();
-
-				}
-			}
-		});
-
-	}
-
-	@Override
-	public void onResume() {
-		super.onResume();
-		Session session = Session.getActiveSession();
-		if (session != null && (session.isOpened() || session.isClosed())) {
-			onSessionStateChange(session, session.getState(), null);
-		}
-
-		uiHelper.onResume();
-
-		uiHelper.onResume();
-	}
-
-	@Override
-	public void onActivityResult(int requestCode, int resultCode, Intent data) {
-		super.onActivityResult(requestCode, resultCode, data);
-		uiHelper.onActivityResult(requestCode, resultCode, data);
-	}
-
-	@Override
-	public void onPause() {
-		super.onPause();
-		uiHelper.onPause();
-	}
-
-	@Override
-	public void onDestroy() {
-		super.onDestroy();
-		uiHelper.onDestroy();
-	}
-
-	@Override
-	public void onSaveInstanceState(Bundle outState) {
-		super.onSaveInstanceState(outState);
-		uiHelper.onSaveInstanceState(outState);
-	}
 }
