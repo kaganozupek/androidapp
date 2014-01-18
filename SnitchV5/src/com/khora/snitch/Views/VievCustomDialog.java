@@ -2,7 +2,7 @@ package com.khora.snitch.Views;
 
 
 
-import com.khora.snitch.GeneralStaticFunctions;
+import com.khora.snitch.StaticFunctions;
 import com.khora.snitch.R;
 import com.khora.snitch.R.drawable;
 import com.khora.snitch.R.layout;
@@ -27,15 +27,15 @@ public class VievCustomDialog extends Dialog {
         ct=context;
        // getWindow().setLayout(GeneralStaticFunctions.convertDiptoPix(1200, context), 
        // GeneralStaticFunctions.convertDiptoPix(800,context ));
-        getWindow().setLayout(GeneralStaticFunctions.convertDiptoPix(1000, context), LayoutParams.WRAP_CONTENT);
+        getWindow().setLayout(StaticFunctions.convertDiptoPix(1000, context), LayoutParams.WRAP_CONTENT);
         getWindow().setBackgroundDrawableResource(R.drawable.background_dialog);
         setCancelable(true);
        
    }
 	public void setSize(int x, int y)
 	{
-		 getWindow().setLayout(GeneralStaticFunctions.convertDiptoPix(x, ct), 
-			        GeneralStaticFunctions.convertDiptoPix(y,ct ));
+		 getWindow().setLayout(StaticFunctions.convertDiptoPix(x, ct), 
+			        StaticFunctions.convertDiptoPix(y,ct ));
 		
 	}
 	

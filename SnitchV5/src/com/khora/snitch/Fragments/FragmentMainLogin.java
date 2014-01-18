@@ -70,6 +70,9 @@ public class FragmentMainLogin extends Fragment implements View.OnClickListener 
 
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		Session.getActiveSession().close();
+		
+		
 		uiHelper = new UiLifecycleHelper(getActivity(), callback);
 		uiHelper.onCreate(savedInstanceState);
 
