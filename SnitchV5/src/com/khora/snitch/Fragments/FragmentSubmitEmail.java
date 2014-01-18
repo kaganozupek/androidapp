@@ -1,6 +1,11 @@
-package com.khora.snitch;
+package com.khora.snitch.Fragments;
 
 import javax.crypto.spec.IvParameterSpec;
+
+import com.khora.snitch.R;
+import com.khora.snitch.Activities.ActivitySubmitEmail;
+import com.khora.snitch.R.id;
+import com.khora.snitch.R.layout;
 
 import android.content.Intent;
 import android.database.Cursor;

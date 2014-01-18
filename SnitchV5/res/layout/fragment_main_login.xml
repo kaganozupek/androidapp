@@ -33,18 +33,18 @@
             android:drawableLeft="@drawable/icon_facebook"
             android:paddingLeft="4dp" />
 
-        <com.facebook.widget.LoginButton
-            xmlns:fb="http://schemas.android.com/apk/res-auto"
+       <com.facebook.widget.LoginButton
+            
             android:id="@+id/authButton"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
             android:background="#1E4072"
+            android:text="Facebook ile giriş yap"
             android:textColor="@color/White"
             android:textSize="20dp"
-            fb:login_text="Facebook ile giriş yap"
-            fb:logout_text="ÇIKIŞ" />
+             />
     </LinearLayout>
 
     <LinearLayout

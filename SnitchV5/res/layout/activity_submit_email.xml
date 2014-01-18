@@ -33,7 +33,7 @@
     	
         <fragment
             android:id="@+id/frg_navigation_drawer"
-            android:name="com.khora.snitch.FragmentNavigationDrawer"
+            android:name="com.khora.snitch.Fragments.FragmentNavigationDrawer"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:layout="@layout/fragment_main_login" />

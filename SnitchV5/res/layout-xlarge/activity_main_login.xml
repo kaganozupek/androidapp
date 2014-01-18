@@ -15,7 +15,7 @@
         
         <fragment
             android:id="@+id/frg_login"
-            android:name="com.khora.snitch.FragmentMainLogin"
+            android:name="com.khora.snitch.Fragments.FragmentMainLogin"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:layout="@layout/fragment_main_login" />
@@ -36,7 +36,7 @@
     	
         <fragment
             android:id="@+id/frg_navigation_drawer"
-            android:name="com.khora.snitch.FragmentNavigationDrawer"
+            android:name="com.khora.snitch.Fragments.FragmentNavigationDrawer"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:layout="@layout/fragment_main_login" />

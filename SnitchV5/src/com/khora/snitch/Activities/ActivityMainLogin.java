@@ -1,7 +1,11 @@
-package com.khora.snitch;
+package com.khora.snitch.Activities;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+
+import com.khora.snitch.R;
+import com.khora.snitch.R.id;
+import com.khora.snitch.R.layout;
 
 import android.opengl.Visibility;
 import android.os.Bundle;

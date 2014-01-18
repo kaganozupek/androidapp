@@ -1,4 +1,7 @@
-package com.khora.snitch;
+package com.khora.snitch.Views;
+
+import com.khora.snitch.R;
+import com.khora.snitch.R.drawable;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;

@@ -1,10 +1,16 @@
-package com.khora.snitch;
+package com.khora.snitch.Activities;
 
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import com.khora.snitch.R;
+import com.khora.snitch.Fragments.FragmentSubmitEmail;
+import com.khora.snitch.Fragments.FragmentSubmitEmailNext;
+import com.khora.snitch.R.id;
 import com.khora.snitch.R.layout;
+import com.khora.snitch.Requests.RequestSignUp;
+import com.khora.snitch.Views.VievCustomDialog;
 
 import android.app.AlertDialog;
 import android.app.Dialog;

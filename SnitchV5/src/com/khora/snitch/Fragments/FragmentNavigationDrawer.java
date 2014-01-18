@@ -1,4 +1,7 @@
-package com.khora.snitch;
+package com.khora.snitch.Fragments;
+
+import com.khora.snitch.R;
+import com.khora.snitch.R.layout;
 
 import android.content.BroadcastReceiver;
 import android.os.Bundle;

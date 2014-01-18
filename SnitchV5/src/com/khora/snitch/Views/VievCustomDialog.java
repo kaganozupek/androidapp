@@ -1,6 +1,11 @@
-package com.khora.snitch;
+package com.khora.snitch.Views;
 
 
+
+import com.khora.snitch.GeneralStaticFunctions;
+import com.khora.snitch.R;
+import com.khora.snitch.R.drawable;
+import com.khora.snitch.R.layout;
 
 import android.annotation.SuppressLint;
 import android.app.ActionBar.LayoutParams;
