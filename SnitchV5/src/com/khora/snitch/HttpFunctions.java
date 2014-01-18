@@ -57,5 +57,38 @@ public class HttpFunctions {
 		}
 		return resultBnd ;
 	}
+	public static Bundle loginWithFacebook(String JsonRequest) {
+		HttpClient client = new DefaultHttpClient();
+		Bundle resultBnd = new Bundle();
+		
+		
+		try {
+			
+			String url = "http://94.122.121.242/AdminPage/api/mobileHttpHandle/LoginRequest";
+			
+			HttpPost post = new HttpPost(url);
+			StringEntity se = new StringEntity(JsonRequest);
+
+			post.setEntity(se);
+
+			post.setHeader("Content-type", "application/json");
+
+			HttpResponse response = client.execute(post);
+			InputStream stream = response.getEntity().getContent();
+			String resultString = StaticFunctions.convertStreamToString(stream);
+			GsonBuilder gsonb = new GsonBuilder();
+			Gson gson = gsonb.create();
+			//Response objesi olusturulacak o obje geri dondurulecek
+			
+
+		} catch (Exception e) {
+			
+		
+			
+
+		}
+		return resultBnd ;
+	}
+
 
 }

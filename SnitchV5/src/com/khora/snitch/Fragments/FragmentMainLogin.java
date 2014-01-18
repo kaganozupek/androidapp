@@ -1,80 +1,103 @@
 package com.khora.snitch.Fragments;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.Arrays;
+
 import com.facebook.Request;
-import com.facebook.Request.GraphUserCallback;
 import com.facebook.Response;
 import com.facebook.Session;
-import com.facebook.Session.StatusCallback;
 import com.facebook.SessionState;
 import com.facebook.UiLifecycleHelper;
 import com.facebook.model.GraphUser;
 import com.facebook.widget.LoginButton;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.khora.snitch.R;
 import com.khora.snitch.Activities.ActivitySubmitEmail;
-import com.khora.snitch.R.id;
-import com.khora.snitch.R.layout;
-
+import com.khora.snitch.Requests.RequestLoginWithFacebook;
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v4.widget.SimpleCursorAdapter.ViewBinder;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.webkit.WebView.FindListener;
+import android.view.inputmethod.InputMethod.SessionCallback;
+import android.view.inputmethod.InputMethodSession;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class FragmentMainLogin extends Fragment implements View.OnClickListener {
+public class FragmentMainLogin extends Fragment implements View.OnClickListener  {
 	private static final String TAG = "MainFragment";
 	private UiLifecycleHelper uiHelper;
-
+	View v;
 	private Session.StatusCallback callback = new Session.StatusCallback() {
-		@SuppressWarnings("deprecation")
+
 		@Override
 		public void call(Session session, SessionState state,
 				Exception exception) {
 
 			if (session.isOpened()) {
-				
-				Request rqst = Request.newMeRequest(session, new Request.GraphUserCallback() {
 
-					  // callback after Graph API response with user object
-					  @Override
-					  public void onCompleted(GraphUser user, Response response) {
-					    if (user != null) {
-					    	
-					    	String name = user.getName();
-					    	Log.i(TAG, name);
-					    	
-					      
-					    }
-					  }
-					});
-				
+				Request rqst = Request.newMeRequest(session,
+						new Request.GraphUserCallback() {
+
+							// callback after Graph API response with user
+							// object
+							@Override
+							public void onCompleted(GraphUser user,
+									Response response) {
+								if (user != null) {
+									GsonBuilder builder = new GsonBuilder();
+									Gson gson = builder.create();
+									RequestLoginWithFacebook loginRequest = new RequestLoginWithFacebook();
+									loginRequest.setuFirstName(user
+											.getFirstName());
+									loginRequest.setuLastName(user
+											.getLastName());
+									loginRequest.setuBirthDate(user
+											.getBirthday());
+									loginRequest.setuEmail((String) user
+											.asMap().get("email"));
+									loginRequest.setuFacebookId(user.getId());
+									
+									try {
+										loginRequest.setuProfilePcirtureURL(new URL("http://graph.facebook.com/"+user.getId()+"/picture?style=small").toString());
+									} catch (MalformedURLException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									}
+									
+									String jsonReques = gson.toJson(loginRequest);
+									
+									
+									
+									
+									
+
+
+								}
+							}
+						});
+
 				rqst.executeAsync();
-				
+
 			}
-			
-
-
 
 			onSessionStateChange(session, state, exception);
 
 		}
 	};
+	
 
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		Session.getActiveSession().close();
-		
-		
+
 		uiHelper = new UiLifecycleHelper(getActivity(), callback);
 		uiHelper.onCreate(savedInstanceState);
+		Session currentSession = Session.getActiveSession();
+		currentSession.closeAndClearTokenInformation();
 
 	};
 
@@ -82,16 +105,18 @@ public class FragmentMainLogin extends Fragment implements View.OnClickListener 
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
-		View v = inflater.inflate(R.layout.fragment_main_login, container,
+		v = inflater.inflate(R.layout.fragment_main_login, container,
 				false);
 
 		// VIew implementations
 		Button btnSubmitMail = (Button) v.findViewById(R.id.btnSubmitEmail);
 		TextView tvLoginMail = (TextView) v.findViewById(R.id.tvLoginMail);
 		LoginButton authButton = (LoginButton) v.findViewById(R.id.authButton);
+		
 		authButton.setFragment(this);
+		authButton.setReadPermissions(Arrays.asList("user_likes",
+				"user_status", "email", "user_birthday"));
 		// View setClick listeners
-
 		btnSubmitMail.setOnClickListener(this);
 		tvLoginMail.setOnClickListener(this);
 		return v;
@@ -111,7 +136,7 @@ public class FragmentMainLogin extends Fragment implements View.OnClickListener 
 
 			break;
 		}
-		case R.id.tvLoginMail: {
+		case R.id.authButton: {
 
 		}
 
@@ -119,7 +144,6 @@ public class FragmentMainLogin extends Fragment implements View.OnClickListener 
 
 	}
 
-	@SuppressWarnings("unused")
 	private void onSessionStateChange(Session session, SessionState state,
 			Exception exception) {
 		if (state.isOpened()) {
@@ -163,4 +187,6 @@ public class FragmentMainLogin extends Fragment implements View.OnClickListener 
 		super.onSaveInstanceState(outState);
 		uiHelper.onSaveInstanceState(outState);
 	}
+
+	
 }
