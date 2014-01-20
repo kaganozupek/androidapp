@@ -1,4 +1,4 @@
-package com.khora.snitch.Requests;
+package com.khora.snitch.HttpRequests;
 
 import android.graphics.drawable.Drawable;
 

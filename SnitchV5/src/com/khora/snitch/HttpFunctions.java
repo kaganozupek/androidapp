@@ -13,22 +13,22 @@ import android.os.Bundle;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.khora.snitch.HttpRequests.LoginRequest;
 
 public class HttpFunctions {
 
-	public static Bundle checkLogin(final String email, final String password) {
+	public static void LoginWithEmail(LoginRequest Request) {
 		HttpClient client = new DefaultHttpClient();
 		Bundle resultBnd = new Bundle();
-		String Request = "";
-		JSONObject requestObject = new JSONObject();
+		String RequestString = "";
+		GsonBuilder builder = new GsonBuilder();
+		Gson gson;
+		gson = builder.create();
 		try {
-			requestObject.put("RequestType", "LoginRequest");
-			requestObject.put("email", "kubra_tugsal@hotmail.com");
-			requestObject.put("password", "qaz123");
 			String url = "http://94.122.121.242/AdminPage/api/mobileHttpHandle/LoginRequest";
-			Request = requestObject.toString();
+			RequestString = gson.toJson(Request);
 			HttpPost post = new HttpPost(url);
-			StringEntity se = new StringEntity(requestObject.toString());
+			StringEntity se = new StringEntity(RequestString);
 
 			post.setEntity(se);
 
@@ -37,26 +37,21 @@ public class HttpFunctions {
 			HttpResponse response = client.execute(post);
 			InputStream stream = response.getEntity().getContent();
 			String resultString = StaticFunctions.convertStreamToString(stream);
-			GsonBuilder gsonb = new GsonBuilder();
-			Gson gson = gsonb.create();
-			//ModelUser user = gson.fromJson(resultString, ModelUser.class);
-
-		
-			//String jsonObject = gson.toJson(user);
-		
 			
-			//resultBnd.putString("LoggedUser", jsonObject);
-			resultBnd.putString("resultCode", "SUCCESS");
+			
+						
 		
 
 		} catch (Exception e) {
 			
-			resultBnd.putString("resultCode", "FAILED");
 			
 
 		}
-		return resultBnd ;
+		
 	}
+	
+	
+	
 	public static Bundle loginWithFacebook(String JsonRequest) {
 		HttpClient client = new DefaultHttpClient();
 		Bundle resultBnd = new Bundle();

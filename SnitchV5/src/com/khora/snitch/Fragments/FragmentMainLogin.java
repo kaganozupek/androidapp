@@ -14,8 +14,10 @@ import com.facebook.widget.LoginButton;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.khora.snitch.R;
+import com.khora.snitch.Activities.ActivityLoginEmail;
 import com.khora.snitch.Activities.ActivitySubmitEmail;
-import com.khora.snitch.Requests.RequestLoginWithFacebook;
+import com.khora.snitch.HttpRequests.RequestLoginWithFacebook;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -136,8 +138,10 @@ public class FragmentMainLogin extends Fragment implements View.OnClickListener 
 
 			break;
 		}
-		case R.id.authButton: {
-
+		case R.id.tvLoginMail: {
+			Intent i = new Intent(getActivity(),ActivityLoginEmail.class);
+			startActivity(i);
+			
 		}
 
 		}

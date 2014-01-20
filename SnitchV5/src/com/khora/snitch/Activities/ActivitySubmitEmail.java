@@ -5,11 +5,12 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import com.khora.snitch.R;
+import com.khora.snitch.StaticFunctions;
 import com.khora.snitch.Fragments.FragmentSubmitEmail;
 import com.khora.snitch.Fragments.FragmentSubmitEmailNext;
+import com.khora.snitch.HttpRequests.RequestSignUp;
 import com.khora.snitch.R.id;
 import com.khora.snitch.R.layout;
-import com.khora.snitch.Requests.RequestSignUp;
 import com.khora.snitch.Views.VievCustomDialog;
 
 import android.app.AlertDialog;
@@ -134,7 +135,7 @@ public class ActivitySubmitEmail extends ActionBarActivity {
 			isFailPassword = true;
 		else
 			isFailPassword = false;
-		if (signUpRequest.getEmail().equals("") || !isEmailValid(signUpRequest.getEmail()))
+		if (signUpRequest.getEmail().equals("") || !StaticFunctions.isEmailValid(signUpRequest.getEmail()))
 			isFailEmail = true;
 		else 
 			isFailEmail = false;
@@ -179,20 +180,7 @@ public class ActivitySubmitEmail extends ActionBarActivity {
 
 	}
 
-	public static boolean isEmailValid(String email) {
-		boolean isValid = false;
-
-		String expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$";
-		CharSequence inputStr = email;
-
-		Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
-		Matcher matcher = pattern.matcher(inputStr);
-		if (matcher.matches()) {
-			isValid = true;
-		}
-		return isValid;
-	}
-
+	
 
 }
 

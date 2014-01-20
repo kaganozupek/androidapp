@@ -1,4 +1,4 @@
-package com.khora.snitch.Requests;
+package com.khora.snitch.HttpRequests;
 
 public class RequestLoginWithFacebook {
 	private String RequestType = "FacebookLoginRequest";
