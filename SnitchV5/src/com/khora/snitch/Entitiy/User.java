@@ -10,11 +10,11 @@ public class User {
 	public String Email;
 	public String Phone;
 	public String Password;
-	public int Status;
-	public int Banned;
-	public int Ban_level;
+	public Boolean Is_active;
+	public int Ban_count;
+	
 	public Date Ban_date;
-	public int Is_verified;
+	//public int Is_verified;
 	public String Invite_code;
 	public String Invited_by;
 	public String Facebook_id;

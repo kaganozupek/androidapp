@@ -64,6 +64,31 @@
         android:textColor="@color/White"
         android:visibility="gone" />
 
-   
+		<Button
+		    android:id="@+id/btnHome"
+		    android:layout_width="wrap_content"
+		    android:layout_height="30dp"
+		    android:layout_alignParentRight="true"
+		    android:layout_alignTop="@+id/tvActionbarTitle"
+		    android:background="@drawable/button_round_gray"
+		    android:onClick="btnHomePressed"
+		    android:text="Home"
+		    android:textColor="@color/White"
+		    android:visibility="gone" />
+
+		<Button
+		    android:id="@+id/btnQuestionMark"
+		    android:layout_width="30dp"
+		    android:layout_height="30dp"
+		    android:layout_alignBottom="@+id/tvActionbarTitle"
+		    android:layout_alignParentRight="true"
+		    android:layout_marginRight="14dp"
+		    android:background="@drawable/button_question_mark"
+		    android:onClick="btnHomePressed"
+		    android:text=" ? "
+		    android:textColor="@color/khora_action_bar_color"
+		    android:textSize="25dp"
+		    android:textStyle="bold"
+		    android:visibility="gone" />
 
 </RelativeLayout>

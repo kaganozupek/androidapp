@@ -1,14 +1,18 @@
 package com.khora.snitch.Fragments;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.khora.snitch.HttpFunctions;
 import com.khora.snitch.R;
 import com.khora.snitch.StaticFunctions;
+import com.khora.snitch.Activities.HomeActivity;
 import com.khora.snitch.Activities.LoginEmailActivity;
 import com.khora.snitch.Activities.SignupEmailActivity;
 import com.khora.snitch.HttpRequests.LoginRequest;
 import com.khora.snitch.HttpResponses.LoginResponse;
 import com.khora.snitch.Views.VievCustomDialog;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -75,11 +79,11 @@ public class FragmentLoginEmail extends Fragment implements OnClickListener {
 			String FailPassword = "Lütfen şifrenizi Türkçe karakter kullanmadan ve en az 6 hane olacak şekilde yazın";
 			String FailEmail = "Mail adresi geçerli değil. Lütfen uygun bir mail adresi yazın";
 			boolean isFailNameSurname, isFailPassword, isFailEmail;
-			//String Email = etEmail.getText().toString();
-			//String Password = etPassword.getText().toString();
+			// String Email = etEmail.getText().toString();
+			// String Password = etPassword.getText().toString();
 			String Email = "gorkemkeles@a.com";
 			String Password = "12345";
-					
+
 			// Check For a Valid Email
 
 			if (Password.equals(""))
@@ -121,13 +125,14 @@ public class FragmentLoginEmail extends Fragment implements OnClickListener {
 
 				AsyncTask<String, String, String> LoginTask = new AsyncTask<String, String, String>() {
 					LoginResponse loginResponse = new LoginResponse();
-
+					
 					@Override
 					protected void onPreExecute() {
 						// TODO Auto-generated method stub
 						super.onPreExecute();
-						StaticFunctions.createPleaseWaitDialog(FragmentLoginEmail.this);
-						
+						StaticFunctions
+								.createPleaseWaitDialog(FragmentLoginEmail.this);
+
 					}
 
 					@Override
@@ -143,16 +148,20 @@ public class FragmentLoginEmail extends Fragment implements OnClickListener {
 					protected void onPostExecute(String result) {
 						// TODO Auto-generated method stub
 						super.onPostExecute(result);
-						
-						if(loginResponse.IsLoginSuccess)
-						{
+
+						if (loginResponse.IsLoginSuccess) {
+							GsonBuilder builder = new GsonBuilder();
+							Gson gson = builder.create();
+							String loggedUser = gson.toJson(loginResponse.User);
 							
+							Intent i = new Intent(getActivity(),
+									HomeActivity.class);
+							i.putExtra("LoggedUser", loggedUser);
 							
-						}
-						else
-						{
-							
-							
+							startActivity(i);
+
+						} else {
+
 						}
 					}
 				};

@@ -47,7 +47,7 @@ public class HttpFunctions {
 		
 
 		} catch (Exception e) {
-			
+			System.out.println("");
 			return null;
 
 		}
