@@ -3,7 +3,7 @@ package com.khora.snitch.Fragments;
 import javax.crypto.spec.IvParameterSpec;
 
 import com.khora.snitch.R;
-import com.khora.snitch.Activities.ActivitySubmitEmail;
+import com.khora.snitch.Activities.SignupEmailActivity;
 import com.khora.snitch.R.id;
 import com.khora.snitch.R.layout;
 
@@ -57,15 +57,15 @@ public class FragmentSubmitEmail extends Fragment implements
 		imgAvatar.setOnClickListener(this);
 		// Initialize Views for Instance State
 
-		if (ActivitySubmitEmail.signUpRequest.getProfilePicture() != null) {
-			imgAvatar.setImageDrawable(ActivitySubmitEmail.signUpRequest
+		if (SignupEmailActivity.signUpRequest.getProfilePicture() != null) {
+			imgAvatar.setImageDrawable(SignupEmailActivity.signUpRequest
 					.getProfilePicture());
 		}
-		if (ActivitySubmitEmail.signUpRequest.getSurname() == null) {
+		if (SignupEmailActivity.signUpRequest.getSurname() == null) {
 
 		} else {
-			etNameSurname.setText(ActivitySubmitEmail.signUpRequest.getName()
-					+ " " + ActivitySubmitEmail.signUpRequest.getSurname());
+			etNameSurname.setText(SignupEmailActivity.signUpRequest.getName()
+					+ " " + SignupEmailActivity.signUpRequest.getSurname());
 		}
 		return fragmentView;
 	}
@@ -94,12 +94,12 @@ public class FragmentSubmitEmail extends Fragment implements
 			
 			Surname = Surname.trim();
 			Name = Name.trim();
-			ActivitySubmitEmail.signUpRequest.setSurname(Surname);
-			ActivitySubmitEmail.signUpRequest.setName(Name);
+			SignupEmailActivity.signUpRequest.setSurname(Surname);
+			SignupEmailActivity.signUpRequest.setName(Name);
 			
 			
 		}
-		ActivitySubmitEmail.signUpRequest.setProfilePicture(imgAvatar
+		SignupEmailActivity.signUpRequest.setProfilePicture(imgAvatar
 				.getDrawable());
 		
 		}catch(Exception ex)

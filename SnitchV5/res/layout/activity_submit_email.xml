@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
    	android:id="@+id/layout_navigation_drawer"
-    tools:context=".ActivitySubmitEmail" >
+    tools:context=".SignupEmailActivity" >
 
     <FrameLayout
         android:id="@+id/content_frame"

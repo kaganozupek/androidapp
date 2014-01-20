@@ -13,11 +13,13 @@ import android.os.Bundle;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.khora.snitch.Entitiy.User;
 import com.khora.snitch.HttpRequests.LoginRequest;
+import com.khora.snitch.HttpResponses.LoginResponse;
 
 public class HttpFunctions {
 
-	public static void LoginWithEmail(LoginRequest Request) {
+	public static LoginResponse LoginWithEmail(LoginRequest Request) {
 		HttpClient client = new DefaultHttpClient();
 		Bundle resultBnd = new Bundle();
 		String RequestString = "";
@@ -25,7 +27,7 @@ public class HttpFunctions {
 		Gson gson;
 		gson = builder.create();
 		try {
-			String url = "http://94.122.121.242/AdminPage/api/mobileHttpHandle/LoginRequest";
+			String url = "http://94.122.225.25/AdminPage/api/mobile/LoginRequest";
 			RequestString = gson.toJson(Request);
 			HttpPost post = new HttpPost(url);
 			StringEntity se = new StringEntity(RequestString);
@@ -37,14 +39,16 @@ public class HttpFunctions {
 			HttpResponse response = client.execute(post);
 			InputStream stream = response.getEntity().getContent();
 			String resultString = StaticFunctions.convertStreamToString(stream);
-			
+			LoginResponse Loginresponse = gson.fromJson(resultString, LoginResponse.class);
+		
+			return Loginresponse;
 			
 						
 		
 
 		} catch (Exception e) {
 			
-			
+			return null;
 
 		}
 		

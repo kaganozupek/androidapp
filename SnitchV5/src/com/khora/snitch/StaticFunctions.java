@@ -17,10 +17,15 @@ import org.json.JSONObject;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.khora.snitch.Views.VievCustomDialog;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.view.Gravity;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
 public class StaticFunctions {
 	
@@ -64,6 +69,26 @@ public class StaticFunctions {
 			isValid = true;
 		}
 		return isValid;
+	}
+	public static void createPleaseWaitDialog(Fragment sender)
+	{
+		VievCustomDialog dialog = new VievCustomDialog(
+				sender.getActivity());
+		LinearLayout dialogLayout = (LinearLayout) dialog
+				.findViewById(R.id.dialogLayout);
+		TextView tx = new TextView(sender.getActivity());
+		tx.setText("Lütfen Bekleyin");
+		tx.setGravity(Gravity.CENTER);
+		tx.setTextSize(StaticFunctions.convertDiptoPix(50, sender.getActivity()));
+		tx.setTextColor(sender.getResources().getColor(R.color.Red));
+		ProgressBar progresBar = new ProgressBar(sender.getActivity());
+		
+		dialogLayout.removeAllViews();
+		dialogLayout.addView(tx);
+		dialogLayout.addView(progresBar);
+		dialog.setCancelable(false);
+		dialog.show();
+		
 	}
 
 	

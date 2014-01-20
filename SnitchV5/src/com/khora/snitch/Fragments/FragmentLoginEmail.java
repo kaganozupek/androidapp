@@ -3,20 +3,27 @@ package com.khora.snitch.Fragments;
 import com.khora.snitch.HttpFunctions;
 import com.khora.snitch.R;
 import com.khora.snitch.StaticFunctions;
-import com.khora.snitch.Activities.ActivityLoginEmail;
-import com.khora.snitch.Activities.ActivitySubmitEmail;
+import com.khora.snitch.Activities.LoginEmailActivity;
+import com.khora.snitch.Activities.SignupEmailActivity;
 import com.khora.snitch.HttpRequests.LoginRequest;
+import com.khora.snitch.HttpResponses.LoginResponse;
 import com.khora.snitch.Views.VievCustomDialog;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.webkit.WebView.FindListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 public class FragmentLoginEmail extends Fragment implements OnClickListener {
@@ -68,9 +75,11 @@ public class FragmentLoginEmail extends Fragment implements OnClickListener {
 			String FailPassword = "Lütfen şifrenizi Türkçe karakter kullanmadan ve en az 6 hane olacak şekilde yazın";
 			String FailEmail = "Mail adresi geçerli değil. Lütfen uygun bir mail adresi yazın";
 			boolean isFailNameSurname, isFailPassword, isFailEmail;
-			String Email = etEmail.getText().toString();
-			String Password = etPassword.getText().toString();
-
+			//String Email = etEmail.getText().toString();
+			//String Password = etPassword.getText().toString();
+			String Email = "gorkemkeles@a.com";
+			String Password = "12345";
+					
 			// Check For a Valid Email
 
 			if (Password.equals(""))
@@ -105,11 +114,50 @@ public class FragmentLoginEmail extends Fragment implements OnClickListener {
 			} else {
 
 				// Success
-				LoginRequest loginRequest = new LoginRequest();
+
+				final LoginRequest loginRequest = new LoginRequest();
 				loginRequest.setuEmail(Email);
 				loginRequest.setuPassword(Password);
-				
-				HttpFunctions.LoginWithEmail(loginRequest);
+
+				AsyncTask<String, String, String> LoginTask = new AsyncTask<String, String, String>() {
+					LoginResponse loginResponse = new LoginResponse();
+
+					@Override
+					protected void onPreExecute() {
+						// TODO Auto-generated method stub
+						super.onPreExecute();
+						StaticFunctions.createPleaseWaitDialog(FragmentLoginEmail.this);
+						
+					}
+
+					@Override
+					protected String doInBackground(String... params) {
+
+						loginResponse = HttpFunctions
+								.LoginWithEmail(loginRequest);
+
+						return null;
+					}
+
+					@Override
+					protected void onPostExecute(String result) {
+						// TODO Auto-generated method stub
+						super.onPostExecute(result);
+						
+						if(loginResponse.IsLoginSuccess)
+						{
+							
+							
+						}
+						else
+						{
+							
+							
+						}
+					}
+				};
+
+				LoginTask.execute(null, null, null);
 			}
 
 		}

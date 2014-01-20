@@ -28,7 +28,7 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-public class ActivitySubmitEmail extends ActionBarActivity {
+public class SignupEmailActivity extends ActionBarActivity {
 
 	public DrawerLayout mDrawerLayout;
 	public FrameLayout drawerLayout;
@@ -145,7 +145,7 @@ public class ActivitySubmitEmail extends ActionBarActivity {
 		
 		if(isFailEmail || isFailNameSurname || isFailPassword)
 		{
-			VievCustomDialog dialog = new VievCustomDialog(ActivitySubmitEmail.this);
+			VievCustomDialog dialog = new VievCustomDialog(SignupEmailActivity.this);
 			
 			TextView tvWarning = (TextView) dialog.findViewById(R.id.tvWarning);
 			String warning="";

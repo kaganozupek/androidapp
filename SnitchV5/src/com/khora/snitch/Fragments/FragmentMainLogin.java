@@ -14,8 +14,8 @@ import com.facebook.widget.LoginButton;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.khora.snitch.R;
-import com.khora.snitch.Activities.ActivityLoginEmail;
-import com.khora.snitch.Activities.ActivitySubmitEmail;
+import com.khora.snitch.Activities.LoginEmailActivity;
+import com.khora.snitch.Activities.SignupEmailActivity;
 import com.khora.snitch.HttpRequests.RequestLoginWithFacebook;
 
 import android.content.Intent;
@@ -133,13 +133,13 @@ public class FragmentMainLogin extends Fragment implements View.OnClickListener 
 		switch (idView) {
 		case R.id.btnSubmitEmail: {
 
-			Intent i = new Intent(getActivity(), ActivitySubmitEmail.class);
+			Intent i = new Intent(getActivity(), SignupEmailActivity.class);
 			startActivity(i);
 
 			break;
 		}
 		case R.id.tvLoginMail: {
-			Intent i = new Intent(getActivity(),ActivityLoginEmail.class);
+			Intent i = new Intent(getActivity(),LoginEmailActivity.class);
 			startActivity(i);
 			
 		}

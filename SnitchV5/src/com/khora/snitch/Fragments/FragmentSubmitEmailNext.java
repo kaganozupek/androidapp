@@ -1,7 +1,7 @@
 package com.khora.snitch.Fragments;
 
 import com.khora.snitch.R;
-import com.khora.snitch.Activities.ActivitySubmitEmail;
+import com.khora.snitch.Activities.SignupEmailActivity;
 import com.khora.snitch.R.id;
 import com.khora.snitch.R.layout;
 
@@ -51,19 +51,19 @@ public class FragmentSubmitEmailNext extends Fragment {
 		finishBtn.setVisibility(View.VISIBLE);
 		//If fields not empy fill them
 		
-		if(ActivitySubmitEmail.signUpRequest.getEmail() != null)
+		if(SignupEmailActivity.signUpRequest.getEmail() != null)
 		{
-			Email.setText(ActivitySubmitEmail.signUpRequest.getEmail().toString());
+			Email.setText(SignupEmailActivity.signUpRequest.getEmail().toString());
 			
 		}
-		if(ActivitySubmitEmail.signUpRequest.getPassword() != null)
+		if(SignupEmailActivity.signUpRequest.getPassword() != null)
 		{
-			Password.setText(ActivitySubmitEmail.signUpRequest.getPassword().toString());
+			Password.setText(SignupEmailActivity.signUpRequest.getPassword().toString());
 			
 		}
-		if(ActivitySubmitEmail.signUpRequest.getPhoneNumber() != null)
+		if(SignupEmailActivity.signUpRequest.getPhoneNumber() != null)
 		{
-			PhoneNumber.setText(ActivitySubmitEmail.signUpRequest.getPhoneNumber().toString());
+			PhoneNumber.setText(SignupEmailActivity.signUpRequest.getPhoneNumber().toString());
 			
 		}
 		
@@ -78,9 +78,9 @@ public class FragmentSubmitEmailNext extends Fragment {
 		super.onDestroy();
 		//Save Instances
 		
-		ActivitySubmitEmail.signUpRequest.setEmail(Email.getText().toString());
-		ActivitySubmitEmail.signUpRequest.setPassword(Password.getText().toString());
-		ActivitySubmitEmail.signUpRequest.setPhoneNumber(PhoneNumber.getText().toString());
+		SignupEmailActivity.signUpRequest.setEmail(Email.getText().toString());
+		SignupEmailActivity.signUpRequest.setPassword(Password.getText().toString());
+		SignupEmailActivity.signUpRequest.setPhoneNumber(PhoneNumber.getText().toString());
 		
 		
 		

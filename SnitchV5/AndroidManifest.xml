@@ -17,7 +17,7 @@
        
            <activity
             android:theme="@style/Theme.AppCompat.Light"
-            android:name="com.khora.snitch.Activities.ActivityMainLogin"
+            android:name="com.khora.snitch.Activities.MainLoginActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,7 +29,7 @@
         
         <activity
             android:theme="@style/Theme.AppCompat.Light"
-            android:name="com.khora.snitch.Activities.ActivitySubmitEmail"
+            android:name="com.khora.snitch.Activities.SignupEmailActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.SUBMITEMAIL" />
@@ -39,7 +39,7 @@
         </activity>
          <activity
             android:theme="@style/Theme.AppCompat.Light"
-            android:name="com.khora.snitch.Activities.ActivityLoginEmail"
+            android:name="com.khora.snitch.Activities.LoginEmailActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAILLOGIN" />
