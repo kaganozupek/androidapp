@@ -5,11 +5,20 @@
     android:background="#383838"
     android:orientation="vertical" >
 
-    <RelativeLayout
+    <ScrollView
+        android:id="@+id/scrollView1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" 
-        android:background="#717171"
-        >
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+            
+            <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#717171" >
 
         <ImageView
             android:id="@+id/imageView1"
@@ -18,13 +27,334 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:src="@drawable/default_male_avatar" />
-
     </RelativeLayout>
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/line_white" />
+    <RelativeLayout
+        android:id="@+id/lyAnasayfa"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal"
+        android:weightSum="10" >
 
+	        <ImageView
+	            android:id="@+id/imageView1"
+	            android:layout_width="match_parent"
+	            android:layout_height="2dp"
+	            android:layout_alignParentTop="true"
+	            android:src="@drawable/background_edit_text_submit_email" />
+
+	        <ImageView
+	            android:id="@+id/imageView1"
+	            android:layout_width="match_parent"
+	            android:layout_height="2dp"
+	            android:layout_alignParentBottom="true"
+	            
+	            android:src="@drawable/background_edit_text_submit_email" />
+
+	        <ImageView
+	            android:id="@+id/imageView2"
+	            android:layout_width="50dp"
+	            android:layout_height="50dp"
+	            android:layout_alignParentLeft="true"
+	            android:layout_centerVertical="true"
+	            android:layout_marginLeft="15dp"
+	            android:src="@drawable/abc_ic_clear_holo_light" />
+
+	        <TextView
+	            android:id="@+id/textView1"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_centerVertical="true"
+	            android:layout_marginLeft="18dp"
+	            android:textColor="#C6C6C6"
+	            android:layout_toRightOf="@+id/imageView2"
+	            android:text="Ana Sayfa"
+	            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+	    </RelativeLayout>
+
+	        <RelativeLayout
+	            android:id="@+id/lyProfil"
+	            android:layout_width="match_parent"
+	            android:layout_height="60dp"
+	            android:layout_alignParentLeft="true"
+	            android:layout_alignParentTop="true"
+	            android:orientation="horizontal"
+	            android:weightSum="10" >
+
+	        <ImageView
+	            android:id="@+id/imageView1"
+	            android:layout_width="match_parent"
+	            android:layout_height="2dp"
+	            android:layout_alignParentTop="true"
+	            android:src="@drawable/background_edit_text_submit_email" />
+
+	        <ImageView
+	            android:id="@+id/imageView1"
+	            android:layout_width="match_parent"
+	            android:layout_height="2dp"
+	            android:layout_alignParentBottom="true"
+	            
+	            android:src="@drawable/background_edit_text_submit_email" />
+
+	        <ImageView
+	            android:id="@+id/imageView2"
+	            android:layout_width="50dp"
+	            android:layout_height="50dp"
+	            android:layout_alignParentLeft="true"
+	            android:layout_centerVertical="true"
+	            android:layout_marginLeft="15dp"
+	            android:src="@drawable/abc_ic_clear_holo_light" />
+
+	        <TextView
+	            android:id="@+id/textView1"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_centerVertical="true"
+	            android:layout_marginLeft="18dp"
+	            android:textColor="#C6C6C6"
+	            android:layout_toRightOf="@+id/imageView2"
+	            android:text="Profil"
+	            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+	    </RelativeLayout>
+
+	        <RelativeLayout
+	            android:id="@+id/lyEniyiler"
+	            android:layout_width="match_parent"
+	            android:layout_height="60dp"
+	            android:layout_alignParentLeft="true"
+	            android:layout_alignParentTop="true"
+	            android:orientation="horizontal"
+	            android:weightSum="10" >
+
+	        <ImageView
+	            android:id="@+id/imageView1"
+	            android:layout_width="match_parent"
+	            android:layout_height="2dp"
+	            android:layout_alignParentTop="true"
+	            android:src="@drawable/background_edit_text_submit_email" />
+
+	        <ImageView
+	            android:id="@+id/imageView1"
+	            android:layout_width="match_parent"
+	            android:layout_height="2dp"
+	            android:layout_alignParentBottom="true"
+	            
+	            android:src="@drawable/background_edit_text_submit_email" />
+
+	        <ImageView
+	            android:id="@+id/imageView2"
+	            android:layout_width="50dp"
+	            android:layout_height="50dp"
+	            android:layout_alignParentLeft="true"
+	            android:layout_centerVertical="true"
+	            android:layout_marginLeft="15dp"
+	            android:src="@drawable/abc_ic_clear_holo_light" />
+
+	        <TextView
+	            android:id="@+id/lyEniyi"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_centerVertical="true"
+	            android:layout_marginLeft="18dp"
+	            android:textColor="#C6C6C6"
+	            android:layout_toRightOf="@+id/imageView2"
+	            android:text="En İyiler"
+	            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+	    </RelativeLayout>
+	        <RelativeLayout
+	        android:id="@+id/lyPaylas"
+	        android:layout_width="match_parent"
+	        android:layout_height="60dp"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignParentTop="true"
+	        
+	        android:orientation="horizontal"
+	        android:weightSum="10" >
+
+	        <ImageView
+	            android:id="@+id/imageView1"
+	            android:layout_width="match_parent"
+	            android:layout_height="2dp"
+	            android:layout_alignParentTop="true"
+	            android:src="@drawable/background_edit_text_submit_email" />
+
+	        <ImageView
+	            android:id="@+id/imageView1"
+	            android:layout_width="match_parent"
+	            android:layout_height="2dp"
+	            android:layout_alignParentBottom="true"
+	            
+	            android:src="@drawable/background_edit_text_submit_email" />
+
+	        <ImageView
+	            android:id="@+id/imageView2"
+	            android:layout_width="50dp"
+	            android:layout_height="50dp"
+	            android:layout_alignParentLeft="true"
+	            android:layout_centerVertical="true"
+	            android:layout_marginLeft="15dp"
+	            android:src="@drawable/abc_ic_clear_holo_light" />
+
+	        <TextView
+	            android:id="@+id/textView1"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_centerVertical="true"
+	            android:layout_marginLeft="18dp"
+	            android:textColor="#C6C6C6"
+	            android:layout_toRightOf="@+id/imageView2"
+	            android:text="Paylaş"
+	            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+	    </RelativeLayout>
+	        <RelativeLayout
+	        android:id="@+id/lyOneri"
+	        android:layout_width="match_parent"
+	        android:layout_height="60dp"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignParentTop="true"
+	        
+	        android:orientation="horizontal"
+	        android:weightSum="10" >
+
+	        <ImageView
+	            android:id="@+id/imageView1"
+	            android:layout_width="match_parent"
+	            android:layout_height="2dp"
+	            android:layout_alignParentTop="true"
+	            android:src="@drawable/background_edit_text_submit_email" />
+
+	        <ImageView
+	            android:id="@+id/imageView1"
+	            android:layout_width="match_parent"
+	            android:layout_height="2dp"
+	            android:layout_alignParentBottom="true"
+	            
+	            android:src="@drawable/background_edit_text_submit_email" />
+
+	        <ImageView
+	            android:id="@+id/imageView2"
+	            android:layout_width="50dp"
+	            android:layout_height="50dp"
+	            android:layout_alignParentLeft="true"
+	            android:layout_centerVertical="true"
+	            android:layout_marginLeft="15dp"
+	            android:src="@drawable/abc_ic_clear_holo_light" />
+
+	        <TextView
+	            android:id="@+id/textView1"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_centerVertical="true"
+	            android:layout_marginLeft="18dp"
+	            android:textColor="#C6C6C6"
+	            android:layout_toRightOf="@+id/imageView2"
+	            android:text="Öneri Ve Şikayet"
+	            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+	    </RelativeLayout>
+	        <RelativeLayout
+	        android:id="@+id/lySorular"
+	        android:layout_width="match_parent"
+	        android:layout_height="60dp"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignParentTop="true"
+	        
+	        android:orientation="horizontal"
+	        android:weightSum="10" >
+
+	        <ImageView
+	            android:id="@+id/imageView1"
+	            android:layout_width="match_parent"
+	            android:layout_height="2dp"
+	            android:layout_alignParentTop="true"
+	            android:src="@drawable/background_edit_text_submit_email" />
+
+	        <ImageView
+	            android:id="@+id/imageView1"
+	            android:layout_width="match_parent"
+	            android:layout_height="2dp"
+	            android:layout_alignParentBottom="true"
+	            
+	            android:src="@drawable/background_edit_text_submit_email" />
+
+	        <ImageView
+	            android:id="@+id/imageView2"
+	            android:layout_width="50dp"
+	            android:layout_height="50dp"
+	            android:layout_alignParentLeft="true"
+	            android:layout_centerVertical="true"
+	            android:layout_marginLeft="15dp"
+	            android:src="@drawable/abc_ic_clear_holo_light" />
+
+	        <TextView
+	            android:id="@+id/textView1"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_centerVertical="true"
+	            android:layout_marginLeft="18dp"
+	            android:textColor="#C6C6C6"
+	            android:layout_toRightOf="@+id/imageView2"
+	            android:text="Sıkça Sorulan Sorular"
+	            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+	    </RelativeLayout>
+	    	 
+	        <RelativeLayout
+	        android:id="@+id/lyHakkimizda"
+	        android:layout_width="match_parent"
+	        android:layout_height="60dp"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignParentTop="true"
+	        
+	        android:orientation="horizontal"
+	        android:weightSum="10" >
+
+	        <ImageView
+	            android:id="@+id/imageView1"
+	            android:layout_width="match_parent"
+	            android:layout_height="2dp"
+	            android:layout_alignParentTop="true"
+	            android:src="@drawable/background_edit_text_submit_email" />
+
+	        <ImageView
+	            android:id="@+id/imageView1"
+	            android:layout_width="match_parent"
+	            android:layout_height="2dp"
+	            android:layout_alignParentBottom="true"
+	            
+	            android:src="@drawable/background_edit_text_submit_email" />
+
+	        <ImageView
+	            android:id="@+id/imageView2"
+	            android:layout_width="50dp"
+	            android:layout_height="50dp"
+	            android:layout_alignParentLeft="true"
+	            android:layout_centerVertical="true"
+	            android:layout_marginLeft="15dp"
+	            android:src="@drawable/abc_ic_clear_holo_light" />
+
+	        <TextView
+	            android:id="@+id/textView1"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_centerVertical="true"
+	            android:layout_marginLeft="18dp"
+	            android:textColor="#C6C6C6"
+	            android:layout_toRightOf="@+id/imageView2"
+	            android:text="Hakkımızda"
+	            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+	    </RelativeLayout>
+	    
+            
+            
+        </LinearLayout>
+    </ScrollView>
+    
 </LinearLayout>

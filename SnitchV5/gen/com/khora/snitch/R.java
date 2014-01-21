@@ -1409,7 +1409,7 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f050018;
         public static final int action_menu_presenter=0x7f050019;
         public static final int action_mode_close_button=0x7f050026;
-        public static final int action_settings=0x7f050089;
+        public static final int action_settings=0x7f050092;
         public static final int activity_chooser_view_content=0x7f050027;
         public static final int always=0x7f05000d;
         public static final int authButton=0x7f050077;
@@ -1472,7 +1472,7 @@ containing a value of this type.
         public static final int ifRoom=0x7f05000c;
         public static final int image=0x7f050029;
         public static final int imageView1=0x7f050071;
-        public static final int imageView2=0x7f050088;
+        public static final int imageView2=0x7f05008a;
         public static final int imgBackground=0x7f050073;
         public static final int ivAvatar=0x7f05007e;
         public static final int large=0x7f050002;
@@ -1484,6 +1484,14 @@ containing a value of this type.
         public static final int linearLayout1=0x7f050068;
         public static final int listMode=0x7f050003;
         public static final int list_item=0x7f05002b;
+        public static final int lyAnasayfa=0x7f050089;
+        public static final int lyEniyi=0x7f05008d;
+        public static final int lyEniyiler=0x7f05008c;
+        public static final int lyHakkimizda=0x7f050091;
+        public static final int lyOneri=0x7f05008f;
+        public static final int lyPaylas=0x7f05008e;
+        public static final int lyProfil=0x7f05008b;
+        public static final int lySorular=0x7f050090;
         public static final int middle=0x7f050014;
         public static final int never=0x7f05000b;
         public static final int none=0x7f050012;
@@ -1496,6 +1504,7 @@ containing a value of this type.
         public static final int rdNotifications=0x7f05004a;
         public static final int rdPlaces=0x7f050049;
         public static final int rdSnitches=0x7f050048;
+        public static final int scrollView1=0x7f050088;
         public static final int search_badge=0x7f050034;
         public static final int search_bar=0x7f050033;
         public static final int search_button=0x7f050035;
